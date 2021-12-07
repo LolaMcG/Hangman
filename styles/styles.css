@@ -1,0 +1,112 @@
+.hangmanContainer{
+    height: 400px;
+    width: 600px;
+    background: orangered;
+    position: relative;
+}
+
+.base{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: blue;
+    width: 250px;
+    height: 20px;
+}
+
+.post{
+    position: absolute;
+    bottom: 10px;
+    left: 150px;
+    width: 20px;
+    height: 380px;
+    background: blue;
+}
+
+.top{
+    position: absolute;
+    top: 10px;
+    left: 150px;
+    width: 200px;
+    height: 20px;
+    background: blue;
+}
+
+.diagonal{
+    position: absolute;
+    background: blue;
+    width: 170px;
+    height: 20px;
+    top: 70px;
+    left: 135px;
+    transform: rotate(315deg);
+}
+
+.noose{
+    position: absolute;
+    background: blue;
+    top: 10px;
+    width: 20px;
+    height: 50px;
+    left: 350px;
+}
+
+.head{
+    position: absolute;
+    top: 50px;
+    left: 326px;
+    border: 10px solid blue;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.body{
+    position: absolute;
+    background: blue;
+    width: 10px;
+    height: 150px;
+    right: 235px;
+    top: 110px;
+}
+
+.leftArm{
+    position: absolute;
+    background: blue;
+    width: 10px;
+    height: 50px;
+    right: 251px;
+    top: 140px;
+    transform: rotate(315deg);
+}
+
+.rightArm{
+    position: absolute;
+    background: blue;
+    width: 10px;
+    height: 50px;
+    right: 221px;
+    top: 140px;
+    transform: rotate(45deg);
+}
+
+.leftLeg{
+    position: absolute;
+    background: blue;
+    width: 10px;
+    height: 70px;
+    right: 256px;
+    bottom: 90px;
+    transform: rotate(220deg);
+}
+
+.rightLeg{
+    position: absolute;
+    background: blue;
+    width: 10px;
+    height: 70px;
+    right: 210px;
+    bottom: 90px;
+    transform: rotate(315deg);
+}
+
