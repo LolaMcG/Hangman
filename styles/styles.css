@@ -111,6 +111,7 @@
     transform: rotate(315deg);
 }
 
+.wrongGuessContainer,
 .alphabetContainer,
 .guessContainer{
     display: flex;
@@ -145,4 +146,40 @@
     margin: 10px;
     border-radius: 5px;
     cursor: auto;
+}
+
+.wrongGuessLetter{
+    padding: 20px;
+    font-size: 30px;
+    margin: 10px;
+    min-height: 36px;
+    color: blue;
+}
+
+.life1,
+.life2,
+.life3,
+.life4,
+.life5,
+.life6,
+.life7,
+.life8,
+.life9,
+.life10,
+.life11{
+display:none;
+}
+
+.life1.active,
+.life2.active,
+.life3.active,
+.life4.active,
+.life5.active,
+.life6.active,
+.life7.active,
+.life8.active,
+.life9.active,
+.life10.active,
+.life11.active{
+    display: block;
 }

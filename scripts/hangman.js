@@ -1,8 +1,18 @@
-let word = "mcgarvey";
+
+function randomIntFromInterval(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+let maxNumber = words.length;
+const rndInt = randomIntFromInterval(0, maxNumber)
+console.log(maxNumber)
+let word = words[rndInt];
+console.log(word);
 
 let allLetters = document.querySelectorAll('.alphabetContainer .letter');
 let guessContainer = document.querySelector('.guessContainer');
+let wrongGuessContainer = document.querySelector('.wrongGuessContainer');
 //console.log(allLetters);
+//console.log(wrongGuessContainer);
 
 let guessLetterHTML = '<div class="guessLetter"></div>';
 for (counter=0; counter < word.length; counter++){
@@ -10,6 +20,7 @@ for (counter=0; counter < word.length; counter++){
 }
 
 let guessLetters = document.querySelectorAll('.guessLetter');
+let lifeCounter = 0;
 //looping through each html letter to add an event listener
 allLetters.forEach(function(letter){
     //console.log(letter);
@@ -26,9 +37,9 @@ allLetters.forEach(function(letter){
             currentLetterHTML.classList.add('clicked');
             // returns an array containing the indexes of where the letter appears in the word
             let answers = [...word.matchAll(currentLetter)];
-            console.log(answers); 
+            // console.log(answers); 
             // if answers array is not empty...
-            if(answers){
+            if(answers.length){
                 // loop through each answer in the answers array
                 answers.forEach(function(answer){
                     //console.log(answer.index);
@@ -41,10 +52,42 @@ allLetters.forEach(function(letter){
                             guessLetters[answer.index].innerHTML = currentLetter.toUpperCase();
                         }
                     }
+                    checkWin();
                 })
             } else {
                 //show next part of hangman
+                wrongGuessLetterHTML = '<div class="wrongGuessLetter">'+currentLetter.toUpperCase()+'</div>';
+                wrongGuessContainer.insertAdjacentHTML('beforeend', wrongGuessLetterHTML);
+                lifeCounter++;
+                //console.log(lifeCounter);
+                let currentLifeSelector = '.life'+lifeCounter;
+                let currentLifeElement = document.querySelector(currentLifeSelector);
+                currentLifeElement.classList.add('active');
+                if(lifeCounter == 11){
+                    endGame();
+                }
+
             }
         }
     });
 });
+
+function checkWin(){
+    blnGameWon = true;
+    for(counter=0; counter < guessLetters.length; counter++){
+        let innerHTML = guessLetters[counter].innerHTML;
+        if(!innerHTML){
+            blnGameWon = false;
+        }
+    }
+    if(blnGameWon){
+        endGame();
+    }
+}
+
+function endGame(){
+    allLetters.forEach(function(letter){
+        console.log(letter);
+        letter.classList.add('clicked');
+    });
+}
