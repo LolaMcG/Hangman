@@ -3,6 +3,7 @@
     width: 600px;
     background: orangered;
     position: relative;
+    margin: 0 auto;
 }
 
 .base{
@@ -110,3 +111,38 @@
     transform: rotate(315deg);
 }
 
+.alphabetContainer,
+.guessContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.guessLetter{
+    padding: 20px;
+    font-size: 30px;
+    border-bottom: 1px solid black;
+    margin: 10px;
+    min-height: 36px;
+}
+
+.letter{
+    padding: 20px;
+    border: 1px solid blue;
+    margin: 10px;
+    border-radius: 5px;
+    color: blue;
+    background: orangered;
+    cursor: pointer;
+}
+
+.letter.clicked{
+    padding: 20px;
+    border: 1px solid grey;
+    background: #e6e6e6;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: auto;
+}
